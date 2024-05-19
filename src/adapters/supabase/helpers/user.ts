@@ -2,7 +2,6 @@ import { Database } from "../types/database";
 import { SupabaseClient } from "@supabase/supabase-js";
 import { Super } from "./supabase";
 import { Context } from "../../../types/context";
-import { addCommentToIssue } from "../../../utils/issue";
 
 export class User extends Super {
   locationResponse: LocationResponse | undefined;
@@ -33,7 +32,6 @@ export class User extends Super {
     const { data, error } = await this.supabase.from("users").select("wallets(*)").eq("id", userId).single();
     if ((error && !data) || !data.wallets?.address) {
       console.error("No wallet address found", { userId, issueNumber }, true);
-      await addCommentToIssue(this.context, "```diff\n # Please set your wallet address with the /wallet command first and try again.\n```");
       throw new Error("No wallet address found");
     }
 

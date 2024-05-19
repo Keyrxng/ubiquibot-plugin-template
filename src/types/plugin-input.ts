@@ -11,22 +11,6 @@ export interface PluginInputs<T extends WebhookEventName = SupportedEvents> {
   ref: string;
 }
 
-export const pluginSettingsSchema = T.Object({
-  labels: T.Object(
-    {
-      time: T.Array(T.String(), { default: [] }),
-      priority: T.Array(T.String(), { default: [] }),
-    },
-    { default: {} }
-  ),
-  basePriceMultiplier: T.Number({ default: 1 }),
-  publicAccessControl: T.Object(
-    {
-      setLabel: T.Boolean({ default: false }),
-      fundExternalClosedIssue: T.Boolean({ default: false }),
-    },
-    { default: {} }
-  ),
-});
+export const pluginSettingsSchema = T.Object({});
 
 export type PluginSettings = StaticDecode<typeof pluginSettingsSchema>;

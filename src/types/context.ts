@@ -3,7 +3,7 @@ import { Octokit } from "@octokit/rest";
 import { PluginSettings } from "./plugin-input";
 import { createAdapters } from "../adapters";
 
-export type SupportedEvents = "issues.labeled" | "issues.unlabeled" | "label.edited" | "issue_comment.created";
+export type SupportedEvents = "issue_comment.created"; // Add more events here
 
 export interface Context<T extends WebhookEventName = SupportedEvents> {
   eventName: T;
@@ -11,6 +11,11 @@ export interface Context<T extends WebhookEventName = SupportedEvents> {
   octokit: InstanceType<typeof Octokit>;
   adapters: ReturnType<typeof createAdapters>;
   config: PluginSettings;
+  env: {
+    GITHUB_TOKEN: string;
+    SUPABASE_URL: string;
+    SUPABASE_KEY: string;
+  };
   logger: {
     fatal: (message: unknown, ...optionalParams: unknown[]) => void;
     error: (message: unknown, ...optionalParams: unknown[]) => void;
