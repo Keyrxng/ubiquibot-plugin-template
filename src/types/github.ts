@@ -11,5 +11,7 @@ export enum UserType {
 
 export type Comment = RestEndpointMethodTypes["issues"]["listComments"]["response"]["data"][0];
 export type Repository = RestEndpointMethodTypes["repos"]["get"]["response"]["data"];
+export type Issue = RestEndpointMethodTypes["issues"]["get"]["response"]["data"];
+export type PullRequest = RestEndpointMethodTypes["pulls"]["get"]["response"]["data"];
 
 export type WebhookEvent<T extends EmitterWebhookEventName = EmitterWebhookEventName> = EmitterWebhookEvent<T>;

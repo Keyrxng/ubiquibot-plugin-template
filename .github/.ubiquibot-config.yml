@@ -6,8 +6,8 @@ plugins:
           id: plugin-name-command
           type: github | worker
           description: "Plugin description"
-          command: "/start | /stop" # if applicable
-          example: "/start | /stop" # if applicable
+          command: "<regex for command>" # if applicable
+          example: "<example usage>" # if applicable
           with: # below is an example, cater to your plugin's needs
             disabledCommands: []
             timers:

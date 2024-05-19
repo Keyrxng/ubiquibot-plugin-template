@@ -5,9 +5,9 @@
 import { SupabaseClient } from "@supabase/supabase-js";
 import { Database } from "../types/database";
 
-import { COMMIT_HASH } from "../../../handlers/shared/commit-hash";
 import { LogLevel, PrettyLogs } from "../pretty-logs";
 import { Context } from "../../../types/context";
+import { COMMIT_HASH } from "../../../utils/commit-hash";
 
 type LogFunction = (message: string, metadata?: any) => void;
 type LogInsert = Database["public"]["Tables"]["logs"]["Insert"];
