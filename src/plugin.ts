@@ -6,7 +6,7 @@ import { createAdapters } from "./adapters";
 import { Database } from "./adapters/supabase/types/database";
 import { Context } from "./types/context";
 import { envSchema } from "./types/env";
-import { pluginSettingsSchema, PluginInputs } from "./types/plugin-input";
+import { pluginSettingsSchema, PluginInputs } from "./types/plugin-inputs";
 
 async function setup() {
   const payload = github.context.payload.inputs;
