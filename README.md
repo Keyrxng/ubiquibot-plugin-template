@@ -11,12 +11,6 @@ It contains the ingredients for a basic plugin, including the necessary files an
 - A basic understanding of the Ubiquibot configuration file and how to define your plugin's settings.
 - A working knowledge of TypeScript and Node.js.
 
-## Notes
-
-- Typescript and subsequently `TSX` are used to run the plugin logic from the workflow, avoiding the need to compile to JS.
-- The plugin is run in a worker context, meaning that it is run in a separate container from the kernel and has no access to the kernel's context, only the context the kernel passes to it.
-- Due to the above, your plugin runs using a generalized `GITHUB_TOKEN` and not your personal access token. This means that you will not have access to private repositories across plugins (afaik), but will have access to the plugin's repository if it is private.
-
 ## Getting Started
 
 1. Create a new repository using this template.
